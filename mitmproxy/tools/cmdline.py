@@ -81,13 +81,17 @@ def common_options(parser, opts):
     opts.make_parser(group, "server_replay_nopop")
     opts.make_parser(group, "server_replay_refresh")
 
-    # Replacements
-    group = parser.add_argument_group("Replacements")
-    opts.make_parser(group, "replacements", metavar="PATTERN", short="R")
+    # Map Remote
+    group = parser.add_argument_group("Map Remote")
+    opts.make_parser(group, "map_remote", metavar="PATTERN", short="M")
 
-    # Set headers
-    group = parser.add_argument_group("Set Headers")
-    opts.make_parser(group, "setheaders", metavar="PATTERN", short="H")
+    # Modify Body
+    group = parser.add_argument_group("Modify Body")
+    opts.make_parser(group, "modify_body", metavar="PATTERN", short="B")
+
+    # Modify headers
+    group = parser.add_argument_group("Modify Headers")
+    opts.make_parser(group, "modify_headers", metavar="PATTERN", short="H")
 
 
 def mitmproxy(opts):
